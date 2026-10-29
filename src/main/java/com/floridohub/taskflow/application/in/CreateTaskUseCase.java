@@ -1,7 +1,7 @@
 package com.floridohub.taskflow.application.in;
 
 import com.floridohub.taskflow.domain.model.Task;
-import com.floridohub.taskflow.domain.enums.TaskPriodity;
+import com.floridohub.taskflow.domain.utils.TaskPriority;
 
 import java.time.LocalDate;
 
