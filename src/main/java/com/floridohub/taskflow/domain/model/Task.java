@@ -34,6 +34,7 @@ public class Task {
         this.title = title;
         this.description = description;
         this.priority = priority;
+        this.status = TaskStatus.PENDING;
         this.dueDate = dueDate;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = this.createdAt;
