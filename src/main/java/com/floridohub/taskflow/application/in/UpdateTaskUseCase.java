@@ -1,0 +1,18 @@
+package com.floridohub.taskflow.application.in;
+
+import com.floridohub.taskflow.domain.model.Task;
+import com.floridohub.taskflow.domain.utils.TaskPriority;
+
+import java.time.LocalDate;
+import java.util.UUID;
+
+public interface UpdateTaskUseCase {
+
+    Task updateTask(
+            UUID id,
+            String title,
+            String description,
+            TaskPriority priority,
+            LocalDate dueDate
+    );
+}
