@@ -10,35 +10,61 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TaskTest {
-    
+
     @Test
-    void complete() {
+    void deveCriarTarefaComStatusPendente() {
+        // Arrange
         Task task = new Task(
                 UUID.randomUUID(),
-                "Prova Geografia",
-                "Estudar sobre Guerra-fria",
+                "Estudar Java",
+                "Estudar testes unitários",
                 TaskPriority.HIGH,
-                LocalDate.now()
+                LocalDate.now().plusDays(7)
         );
 
-        task.complete();
-
-        assertEquals(TaskStatus.COMPLETED, task.getStatus());
+        // Assert
+        assertEquals(TaskStatus.PENDING, task.getStatus());
     }
 
     @Test
-    void start() {
-
-        Task task = new Task(
-                UUID.randomUUID(),
-                "Prova Geografia",
-                "Estudar sobre Guerra-fria",
-                TaskPriority.HIGH,
-                LocalDate.now()
+    void naoDeveCriarTarefaComIdNulo() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new Task(
+                        null,
+                        "Estudar Java",
+                        "Estudar testes unitários",
+                        TaskPriority.HIGH,
+                        LocalDate.now().plusDays(7)
+                )
         );
+    }
 
-        task.start();
+    @Test
+    void naoDeveCriarTarefaComTituloNulo() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new Task(
+                        UUID.randomUUID(),
+                        null,
+                        "Estudar testes unitários",
+                        TaskPriority.HIGH,
+                        LocalDate.now().plusDays(7)
+                )
+        );
+    }
 
-        assertEquals(TaskStatus.IN_PROGRESS, task.getStatus());
+    @Test
+    void naoDeveCriarTarefaComTituloVazio() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new Task(
+                        UUID.randomUUID(),
+                        "   ",
+                        "Estudar testes unitários",
+                        TaskPriority.HIGH,
+                        LocalDate.now().plusDays(7)
+                )
+        );
     }
 }

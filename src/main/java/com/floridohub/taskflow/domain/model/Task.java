@@ -27,7 +27,7 @@ public class Task {
     ) {
         if(id == null)
             throw new IllegalArgumentException("O ID não pode ser nulo!");
-        if(title == null)
+        if(title == null || title.isBlank())
             throw new IllegalArgumentException("O título é obrigatório");
 
         this.id = id;
