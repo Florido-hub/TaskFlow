@@ -4,6 +4,7 @@ import com.floridohub.taskflow.domain.model.Task;
 import com.floridohub.taskflow.domain.utils.TaskPriority;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public interface CreateTaskUseCase {
 

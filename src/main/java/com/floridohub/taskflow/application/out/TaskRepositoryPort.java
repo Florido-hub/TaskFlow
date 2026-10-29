@@ -14,7 +14,7 @@ public interface TaskRepositoryPort {
 
     Optional<Task> getTask(UUID id);
 
-    void updateTask(Task task);
+    Task updateTask(Task task);
 
     void deleteTask(UUID id);
 }
