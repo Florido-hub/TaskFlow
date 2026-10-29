@@ -19,8 +19,8 @@ class TaskTest {
     void setUp() {
         task = new Task(
                 UUID.randomUUID(),
-                "Estudar Java",
-                "Estudar testes unitários",
+                "Estudar Geografia",
+                "Estudar guerra-fria",
                 TaskPriority.HIGH,
                 LocalDate.now().plusDays(7)
         );
