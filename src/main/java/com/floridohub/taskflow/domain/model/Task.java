@@ -40,6 +40,26 @@ public class Task {
         this.updatedAt = this.createdAt;
     }
 
+    public Task(
+            UUID id,
+            String title,
+            String description,
+            TaskStatus status,
+            TaskPriority priority,
+            LocalDate dueDate,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt)
+    {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.priority = priority;
+        this.dueDate = dueDate;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
     public void update(
             String title,
             String description,
@@ -77,33 +97,63 @@ public class Task {
         return id;
     }
 
-    public void setId(UUID id) {}
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public TaskStatus getStatus() {
         return status;
+    }
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
     }
 
     public TaskPriority getPriority() {
         return priority;
     }
 
+    public void setPriority(TaskPriority priority) {
+        this.priority = priority;
+    }
+
     public LocalDate getDueDate() {
         return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
     }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

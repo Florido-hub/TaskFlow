@@ -1,4 +1,4 @@
-package com.floridohub.taskflow.adapter.in.controllers;
+package com.floridohub.taskflow.adapter.in.common.DTOs;
 
 import com.floridohub.taskflow.domain.utils.TaskPriority;
 

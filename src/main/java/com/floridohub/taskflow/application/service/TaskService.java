@@ -65,7 +65,12 @@ public class TaskService implements
     @Override
     public Task startTask(UUID id) {
         Task task = taskRepositoryPort.getTask(id).orElseThrow(()-> new TaskNotFoundException("Task não encontrada"));
+
+        System.out.println("Antes:" + task.getStatus());
+
         task.start();
+
+        System.out.println("Depois:" + task.getStatus());
 
         return taskRepositoryPort.updateTask(task);
     }

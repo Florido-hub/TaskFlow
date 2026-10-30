@@ -4,6 +4,7 @@ import com.floridohub.taskflow.domain.utils.TaskPriority;
 import com.floridohub.taskflow.domain.utils.TaskStatus;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ import java.util.UUID;
 @Table(name = "task")
 @EntityListeners(AuditingEntityListener.class)
 @Data
+@NoArgsConstructor
 public class TaskEntity {
 
     @Id
@@ -39,4 +41,15 @@ public class TaskEntity {
 
     @Column(nullable = false)
     private LocalDateTime updatedAt;
+
+    public TaskEntity(UUID id, String title, String description, TaskStatus status, TaskPriority priority, LocalDate dueDate, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.priority = priority;
+        this.dueDate = dueDate;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 }
