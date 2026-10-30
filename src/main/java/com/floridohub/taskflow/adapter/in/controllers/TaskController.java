@@ -18,13 +18,13 @@ public class TaskController {
 
     @PostMapping
     public ResponseEntity<Task> createTask(
-            @RequestBody Task task
+            @RequestBody CreateTaskRequest request
     ){
         Task createdTask = createTaskUseCase.createTask(
-                task.getTitle(),
-                task.getDescription(),
-                task.getPriority(),
-                task.getDueDate());
+                request.title(),
+                request.description(),
+                request.priority(),
+                request.dueDate());
 
         return ResponseEntity.ok(createdTask);
     }

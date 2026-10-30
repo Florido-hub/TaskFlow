@@ -5,11 +5,15 @@ import com.floridohub.taskflow.application.out.TaskRepositoryPort;
 import com.floridohub.taskflow.domain.exception.TaskNotFoundException;
 import com.floridohub.taskflow.domain.model.Task;
 import com.floridohub.taskflow.domain.utils.TaskPriority;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
+@Service
+@RequiredArgsConstructor
 public class TaskService implements
         CreateTaskUseCase,
         ListTasksUseCase,
@@ -21,10 +25,6 @@ public class TaskService implements
 {
 
     private final TaskRepositoryPort taskRepositoryPort;
-
-    public TaskService(TaskRepositoryPort taskRepositoryPort){
-        this.taskRepositoryPort = taskRepositoryPort;
-    }
 
     @Override
     public Task createTask(String title, String description, TaskPriority priority, LocalDate dueDate) {
