@@ -4,6 +4,7 @@ import com.floridohub.taskflow.adapter.in.common.DTOs.CreateTaskRequest;
 import com.floridohub.taskflow.adapter.in.common.resource.GenericResource;
 import com.floridohub.taskflow.application.in.*;
 import com.floridohub.taskflow.domain.model.Task;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -28,7 +29,7 @@ public class TaskController implements GenericResource {
 
     @PostMapping
     public ResponseEntity<Task> createTask(
-            @RequestBody CreateTaskRequest request
+            @RequestBody @Valid CreateTaskRequest request
     ){
         Task createdTask = createTaskUseCase.createTask(
                 request.title(),

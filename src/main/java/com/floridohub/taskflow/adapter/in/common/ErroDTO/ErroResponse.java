@@ -17,4 +17,8 @@ public record ErroResponse(
     public static ErroResponse notFound(String mensagem){
         return new ErroResponse(HttpStatus.NOT_FOUND.value(), mensagem, List.of());
     }
+
+    public static ErroResponse conflito(String mensagem){
+        return new ErroResponse(HttpStatus.CONFLICT.value(), mensagem, List.of());
+    }
 }

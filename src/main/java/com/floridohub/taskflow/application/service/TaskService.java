@@ -41,7 +41,8 @@ public class TaskService implements
 
     @Override
     public Task getTaskById(UUID id) {
-        return taskRepositoryPort.getTask(id).orElseThrow(() -> new TaskNotFoundException("Task não encontrada"));
+        return taskRepositoryPort.getTask(id)
+                .orElseThrow(() -> new TaskNotFoundException("Task não encontrada"));
     }
 
     @Override
@@ -56,7 +57,9 @@ public class TaskService implements
 
     @Override
     public Task completeTask(UUID id) {
-        Task task = taskRepositoryPort.getTask(id).orElseThrow(()-> new TaskNotFoundException("Task não encontrada"));
+        Task task = taskRepositoryPort.getTask(id)
+                .orElseThrow(()-> new TaskNotFoundException("Task não encontrada"));
+
         task.complete();
 
         return taskRepositoryPort.updateTask(task);
@@ -64,13 +67,10 @@ public class TaskService implements
 
     @Override
     public Task startTask(UUID id) {
-        Task task = taskRepositoryPort.getTask(id).orElseThrow(()-> new TaskNotFoundException("Task não encontrada"));
-
-        System.out.println("Antes:" + task.getStatus());
+        Task task = taskRepositoryPort.getTask(id)
+                .orElseThrow(()-> new TaskNotFoundException("Task não encontrada"));
 
         task.start();
-
-        System.out.println("Depois:" + task.getStatus());
 
         return taskRepositoryPort.updateTask(task);
     }
