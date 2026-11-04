@@ -219,9 +219,9 @@ Copy-Item .env.example .env
 Configure os seguintes valores:
 
 ```env
-DB_URL=jdbc:mysql://localhost:3306/taskflow
-DB_USERNAME=root
-DB_PASSWORD=sua_senha
+DB_URL=sua_url_aqui
+DB_USERNAME=seu_username_aqui
+DB_PASSWORD=seu_password_aqui
 ```
 
 **Importante:** o arquivo `.env` serve como modelo de configuração. O Spring Boot não carrega arquivos `.env` automaticamente. Portanto, configure essas variáveis no ambiente de execução ou na configuração de execução da sua IDE.
