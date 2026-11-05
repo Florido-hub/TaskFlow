@@ -38,28 +38,8 @@ A aplicação está organizada em quatro camadas principais:
 
 ### Fluxo de comunicação
 
-```text
-        Cliente HTTP
-             |
-             v
-      Adapter In (REST)
-             |
-             v
-       Application
-        (Use Cases)
-             |
-             v
-          Domain
-             |
-             v
-      Repository Port
-             |
-             v
-      Adapter Out (JPA)
-             |
-             v
-           MySQL
-```
+<img width="1536" height="1024" alt="Arquitetura Hexagonal da TaskFlow" src="https://github.com/user-attachments/assets/664d783a-510c-4527-8b50-90dfe763cf4f" />
+
 
 Essa estrutura permite substituir ou modificar componentes externos sem comprometer diretamente as regras de negócio.
 
@@ -115,7 +95,6 @@ pom.xml
 README.md
 ```
 
-*Observação: a estrutura acima representa a organização lógica dos componentes. Os nomes e subpacotes devem acompanhar a implementação atual do repositório.*
 
 ## Funcionalidades
 
@@ -307,4 +286,4 @@ Além de implementar uma API funcional, o TaskFlow é um projeto de aprendizado 
 
 ---
 
-Desenvolvido como projeto prático de estudos em desenvolvimento backend com Java e Spring Boot.
+> Desenvolvido como projeto prático de estudos em desenvolvimento backend com Java e Spring Boot.
