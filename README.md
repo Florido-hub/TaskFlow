@@ -1,5 +1,7 @@
 # TaskFlow
 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Florido-hub/TaskFlow/blob/main/LICENSE)
+
 **TaskFlow** é uma API REST para gerenciamento de tarefas, desenvolvida com Java e Spring Boot. O projeto tem como objetivo oferecer operações para criação, consulta, atualização e gerenciamento do ciclo de vida de tarefas, aplicando princípios de arquitetura limpa, separação de responsabilidades e organização do código.
 
 O projeto utiliza **Arquitetura Hexagonal (Ports and Adapters)**, mantendo as regras de negócio independentes dos mecanismos de persistência e da camada de entrada da aplicação.
